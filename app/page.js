@@ -1,69 +1,33 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Check, Clock3, Leaf, MapPin, PackageCheck, ShoppingBasket, Sparkles, Truck } from "lucide-react";
+
+const categories = [
+  ["01", "Foodstuffs & grains", "Rice, beans, garri and the everyday essentials.", "🌾"],
+  ["02", "Fresh produce", "Tomatoes, peppers, onions and leafy greens.", "🥬"],
+  ["03", "Fruits", "A colourful mix of seasonal favourites.", "🍊"],
+  ["04", "Drinks & dairy", "Drinks, milk and other fridge staples.", "🥛"],
+  ["05", "Frozen foods", "Convenient options for your freezer.", "🧊"],
+  ["06", "Home essentials", "Cleaning, toiletries and household basics.", "🧺"],
+];
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <main>
+    <header className="site-header"><Link href="/" className="brand"><span className="brand-mark"><Leaf size={21} fill="currentColor" /></span><span>grocerly<span className="brand-dot">.</span></span></Link><nav className="desktop-nav"><a href="#how-it-works">How it works</a><a href="#why-grocerly">Why Grocerly</a><a href="#coming-soon">Coming to Osogbo</a></nav><Link className="button button-orange nav-cta" href="/pre-register">Pre-register <ArrowUpRight size={17}/></Link></header>
+
+    <section className="hero" id="coming-soon"><div className="hero-copy"><div className="eyebrow"><span className="eyebrow-dot"/> COMING SOON TO OSOGBO</div><h1>Your groceries.<br/><em>Your time.</em><br/>Your convenience.</h1><p className="hero-description">From everyday foodstuffs to fresh vegetables and household essentials, GROCERLY is making grocery shopping easier. Tell us what you need, and we’ll shop for you and deliver to your doorstep.</p><div className="hero-actions"><Link className="button button-orange button-large" href="/pre-register">Pre-register now <ArrowRight size={18}/></Link><a className="button button-text" href="#how-it-works">See how it works <span>↓</span></a></div><div className="hero-note"><MapPin size={16}/><span>Launching in Osogbo, Osun State. Be among the first.</span></div></div>
+      <div className="hero-visual"><div className="hero-image" role="img" aria-label="Fresh vegetables and groceries arranged on a market table"/><div className="image-label"><span className="label-icon"><Leaf size={16}/></span><span><b>Fresh starts here</b><small>Made for Osogbo living</small></span></div><div className="floating-note"><span className="floating-icon"><ShoppingBasket size={19}/></span><span><b>Your list, handled.</b><small>More time for what matters</small></span><span className="floating-check"><Check size={15}/></span></div><span className="visual-sparkle sparkle-one">✳</span><span className="visual-sparkle sparkle-two">✳</span></div>
+    </section>
+
+    <div className="ticker"><span>GOOD FOOD, MORE TIME</span><i>✳</i><span>YOUR NEIGHBOURHOOD, YOUR WAY</span><i>✳</i><span>A FRESH WAY TO SHOP</span><i>✳</i><span>GOOD FOOD, MORE TIME</span></div>
+
+    <section className="section how-section" id="how-it-works"><div className="section-heading"><div><div className="eyebrow"><span className="eyebrow-dot"/> A LITTLE LESS MARKET, A LOT MORE YOU</div><h2>Good groceries.<br/><em>Without the runaround.</em></h2></div><p>We’re building a simpler way to shop for the things your home needs. Here’s the idea.</p></div><div className="steps"><article className="step-card"><span className="step-number">01 / YOUR LIST</span><span className="step-icon"><ShoppingBasket size={24}/></span><h3>Tell us what you need</h3><p>Browse our future grocery catalogue or send us your shopping list.</p><span className="step-arrow">↗</span></article><article className="step-card"><span className="step-number">02 / OUR SHOP</span><span className="step-icon orange-icon"><PackageCheck size={24}/></span><h3>We shop for you</h3><p>We’ll source your groceries from local markets and supermarkets.</p><span className="step-arrow">↗</span></article><article className="step-card"><span className="step-number">03 / YOUR DOOR</span><span className="step-icon blue-icon"><Truck size={24}/></span><h3>Get it delivered</h3><p>Receive your groceries at your doorstep, without the shopping stress.</p><span className="step-arrow">↗</span></article></div></section>
+
+    <section className="why-section" id="why-grocerly"><div className="why-image" role="img" aria-label="A local market stall with baskets of fresh produce"><div className="image-caption"><span>ROOTED IN THE EVERYDAY</span><b>From our markets<br/>to your table.</b></div></div><div className="why-content"><div className="eyebrow"><span className="eyebrow-dot"/> A BETTER WAY TO BRING IT HOME</div><h2>More ease in<br/><em>your everyday.</em></h2><p className="why-intro">GROCERLY is being built around the way Osogbo shops: practical, personal, and close to home.</p><div className="benefit-list"><div><span>01</span><p><b>Convenience that gives time back</b><small>Spend less time going market to market.</small></p></div><div><span>02</span><p><b>Choice, with care</b><small>We’ll source from local vendors and supermarkets.</small></p></div><div><span>03</span><p><b>Clear from the start</b><small>We’re working towards fair, transparent pricing.</small></p></div><div><span>04</span><p><b>Local by nature</b><small>A service designed with Osogbo in mind.</small></p></div></div><Link className="text-link" href="/pre-register">Tell us what matters to you <ArrowRight size={16}/></Link></div></section>
+
+    <section className="section categories-section"><div className="section-heading category-heading"><div><div className="eyebrow"><span className="eyebrow-dot"/> THE EVERYDAY, COVERED</div><h2>A little bit of <em>everything.</em></h2></div><p>These are the categories we’re exploring for launch. Tell us what belongs on your list.</p></div><div className="category-grid">{categories.map(([number, title, copy, icon])=><article className="category-card" key={number}><span className="category-number">{number}</span><span className="category-emoji" aria-hidden="true">{icon}</span><h3>{title}</h3><p>{copy}</p><span className="category-line"/></article>)}</div><p className="catalogue-note"><Sparkles size={15}/> Categories shown are planned, not a live catalogue.</p></section>
+
+    <section className="final-cta"><div className="cta-decoration">✳</div><div className="eyebrow light-eyebrow"><span className="eyebrow-dot"/> A FRESH CHAPTER IS ON ITS WAY</div><h2>Osogbo, something<br/><em>fresh is coming.</em></h2><p>Help us build a grocery delivery service that works for you. Share what matters, and be among the first to hear when GROCERLY launches.</p><Link href="/pre-register" className="button button-orange button-large">Get early access <ArrowRight size={18}/></Link><small>No orders just yet — we’re getting ready.</small></section>
+
+    <footer className="site-footer"><div className="footer-main"><div><Link href="/" className="brand"><span className="brand-mark"><Leaf size={19} fill="currentColor"/></span><span>grocerly<span className="brand-dot">.</span></span></Link><p>Making grocery shopping easier,<br/>one Osogbo home at a time.</p></div><div><span className="footer-label">COMING SOON</span><p className="footer-place"><MapPin size={15}/> Osogbo, Osun State</p></div><div><span className="footer-label">SAY HELLO</span><p className="footer-muted">Contact details coming soon</p></div><div><span className="footer-label">THE DETAILS</span><Link href="/privacy" className="footer-link">Privacy policy <ArrowUpRight size={14}/></Link></div></div><div className="footer-bottom"><span>© 2026 GROCERLY. Made for Osogbo.</span><span>GOOD THINGS ARE GROWING <Leaf size={13}/></span></div></footer>
+  </main>;
 }
