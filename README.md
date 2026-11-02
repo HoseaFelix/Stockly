@@ -1,6 +1,6 @@
-# GROCERLY pre-launch
+# STOCKLY pre-launch
 
-A pre-launch landing page and survey for GROCERLY, an upcoming grocery shopping and delivery service for Osogbo, Osun State. The service is not yet operational and the category cards are not a live catalogue.
+A pre-launch landing page and survey for STOCKLY, an upcoming grocery shopping and delivery service for Osogbo, Osun State. The service is not yet operational and the category cards are not a live catalogue.
 
 ## Prerequisites
 
@@ -59,7 +59,7 @@ The collection can later be exported from Firebase Console or with an authentica
 
 - Add `FIREBASE_PROJECT_ID`, `FIREBASE_CLIENT_EMAIL`, and `FIREBASE_PRIVATE_KEY` as server-side environment variables in Vercel or your hosting provider. Do not add them to client-exposed environment variables.
 - Deploy `firestore.rules` to the same Firebase project.
-- Replace `[REPLACE WITH GROCERLY PRIVACY EMAIL OR CONTACT DETAILS]` in the privacy page with a business-controlled contact method.
+- Replace `[REPLACE WITH STOCKLY PRIVACY EMAIL OR CONTACT DETAILS]` in the privacy page with a business-controlled contact method.
 - Review data retention, deletion requests, and the privacy policy for your actual operating practices before launch.
 - If deploying multiple instances, replace the in-memory rate limiter with a shared store. The current limiter resets on process restart and does not coordinate across instances.
 - Confirm Firestore billing, service account permissions, deployment environment variables, and the production build in the hosting project.
